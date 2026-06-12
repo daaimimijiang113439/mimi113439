@@ -1,8 +1,19 @@
 {
-  "name": "my-pwa-app",
+  "name": "my-web-app",
   "version": "1.0.0",
+  "description": "My web app",
+  "main": "script.js",
   "scripts": {
-    "build": "echo 'Build completed'"
+    "build": "mkdir -p dist && cp index.html manifest.json script.js style.css sw.js tutorial.html update-notice.html dist/"
   },
-  "dependencies": {}
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@capacitor/core": "^6.1.2",
+    "@capacitor/android": "^6.1.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.2"
+  }
 }
