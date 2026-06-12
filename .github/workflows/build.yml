@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18.x
-          cache: 'npm'
+          # 删掉了导致报错的 cache: 'npm'
 
       - name: Install dependencies
         run: npm install --no-audit --no-fund
@@ -29,6 +29,12 @@ jobs:
 
       - name: Sync Capacitor
         run: npx cap sync android
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
 
       - name: Build APK
         uses: gradle/gradle-build-action@v2
